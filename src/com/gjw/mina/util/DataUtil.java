@@ -1,5 +1,6 @@
 package com.gjw.mina.util;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
@@ -12,6 +13,7 @@ import com.gjw.mina.msg.AbsMessage;
  * @create 2017-11-21 13:53
  **/
 public class DataUtil {
+	public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static Random random = new Random();
     /**
      * ·â×°ÏûÏ¢
