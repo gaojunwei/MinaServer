@@ -211,10 +211,4 @@ public class HandlerEvent {
         
         return JSON.toJSONString(dataMap);
 	}
-	
-	public static void main(String[] args) throws Exception {
-		String base64Str = EncryptionUtils.base64EncodeFile("c:/cs/redscreen.bin");
-		System.out.println(base64Str);
-	}
-	
 }
