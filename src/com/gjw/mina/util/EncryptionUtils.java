@@ -2,6 +2,8 @@ package com.gjw.mina.util;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -43,6 +45,27 @@ public class EncryptionUtils {
         String s = new String(java.util.Base64.getEncoder().encode(buffer));
         return s;
     }
+    
+    /**
+     * 获取文件的MD5值
+     * @param filePath
+     * @return
+     */
+    public static String getFileMd5(String filePath)
+    {
+    	try {
+			return DigestUtils.md5Hex(new FileInputStream(filePath));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	return null;
+    }
+    
+    public static void main(String[] args) {
+		System.out.println(getFileMd5("C:/cs/epl/EPL_FIRMWARE_0.0.8.bin"));
+	}
     
     public static String base64Encode(String data) {
         return base64Encode(data.getBytes());

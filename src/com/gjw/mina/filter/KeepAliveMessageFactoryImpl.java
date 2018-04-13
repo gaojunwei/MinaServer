@@ -58,7 +58,6 @@ public class KeepAliveMessageFactoryImpl implements KeepAliveMessageFactory {
                 String json;
                 try {
                     json = new String(bytes,"utf-8");
-                    logger.info("接收到心跳包1:"+json);
                     Map<String,Object> map = (Map<String,Object>) JSON.parse(json);
                     String ht = map.get("order")==null?"":map.get("order").toString();
                     if(ht.equals("h_t"))
